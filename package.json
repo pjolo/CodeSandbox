@@ -1,32 +1,94 @@
 {
-  "name": "react",
-  "version": "1.0.0",
-  "description": "React example starter project",
-  "keywords": [
-    "react",
-    "starter"
-  ],
-  "main": "src/index.js",
-  "dependencies": {
-    "loader-utils": "3.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-scripts": "5.0.1"
+  "name": "fhir-ui",
+  "version": "0.6.3",
+  "description": "React components to display HL7 FHIR data using Material-UI",
+  "homepage": "https://healthintellect.github.io/fhir-ui",
+  "bugs": {
+    "url": "https://github.com/healthintellect/fhir-ui/issues",
+    "email": "info@healthintellect.com"
   },
-  "devDependencies": {
-    "@babel/runtime": "7.13.8",
-    "typescript": "4.1.3"
+  "keywords": [
+    "HL7",
+    "FHIR",
+    "R4",
+    "React",
+    "Material-UI"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:healthintellect/fhir-ui.git",
+    "directory": "fhir-ui"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "Brayton Stafford <info@healthintellect.com>",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@date-io/core": ">=1.2.0",
+    "@date-io/moment": ">=1.2.0",
+    "@material-ui/core": ">=4.0.0",
+    "@material-ui/icons": ">=4.0.0",
+    "@material-ui/pickers": ">=3.0.0",
+    "clsx": ">=1.0.0",
+    "moment": ">=2.0.0",
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "docz:dev": "docz dev --config ./doczrc.js",
+    "docz:build": "docz build --config ./doczrc.js",
+    "deploy": "yarn docz:build && gh-pages -d .docz/dist"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-external-helpers": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.5",
+    "@babel/plugin-transform-react-jsx": "^7.7.7",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@date-io/core": "^1.3.11",
+    "@date-io/moment": "^1.3.11",
+    "@material-ui/core": "^4.5.2",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/pickers": "^3.2.7",
+    "@svgr/rollup": "^2.4.1",
+    "babel-eslint": "^10.0.3",
+    "clsx": "^1.0.4",
+    "core-js": "^3.3.5",
+    "docz": "^2.2.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "gh-pages": "^2.1.1",
+    "global": "^4.4.0",
+    "moment": "^2.24.0",
+    "prettier": "^1.18.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "^3.3.0-next.80",
+    "rollup": "^1.27.13",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-url": "^3.0.1"
+  },
+  "dependencies": {}
 }

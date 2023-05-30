@@ -1,13 +1,21 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import PatientCard from './components/patient/PatientCard'
+import PatientTable from './components/patient/PatientTable'
+import PatientDetail from './components/patient/PatientDetail'
+import PatientBanner from './components/patient/PatientBanner'
+import ObservationTable from './components/observation/ObservationTable'
+import ObservationDetail from './components/observation/ObservationDetail'
+import AllergyTable from './components/allergy/AllergyTable'
+import ConditionTable from './components/condition/ConditionTable'
+import MedicationTable from './components/medication/MedicationTable'
 
-import App from "./App";
-
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+export {
+  PatientCard,
+  PatientTable,
+  PatientDetail,
+  PatientBanner,
+  ObservationTable,
+  ObservationDetail,
+  AllergyTable,
+  ConditionTable,
+  MedicationTable,
+}
